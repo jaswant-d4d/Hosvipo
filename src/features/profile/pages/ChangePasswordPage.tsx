@@ -1,10 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { Mail } from "lucide-react";
-
-import { PasswordInput, Input, Button, Checkbox, PageHeader } from "../../../components/ui";
-
-import { getCurrentYear } from "../../../utils/generals";
-
+import {  useNavigate } from "react-router-dom";
+import { PasswordInput,  Button, PageHeader } from "../../../components/ui";
 import { FormProvider, useForm } from "react-hook-form";
 import { ChangePasswordSchema, type ChangePasswordFormData } from "../../../schemas/auth.schema";
 import { zodResolver } from "@hookform/resolvers/zod";

@@ -5,7 +5,7 @@ import Footer from "../components/layout/Footer";
 function PublicLayout() {
     return (
         <div className="min-h-screen bg-white flex flex-col">
-            <Header />
+            <Header setOpen={() => { }} miniSidebar={false} setMiniSidebar={() => { }} />
 
             <main className="flex-1">
                 <Outlet />

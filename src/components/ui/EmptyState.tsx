@@ -10,7 +10,7 @@ interface EmptyStateProps {
     className?: string;
 }
 
-function EmptyState({ image, title, description, buttonText, onClick, className }: EmptyStateProps) {
+function EmptyState({ image, title, description, buttonText, className }: EmptyStateProps) {
     return (
         <div
             className={clsx(
@@ -39,7 +39,8 @@ function EmptyState({ image, title, description, buttonText, onClick, className 
 
             {buttonText && (
                 <Button
-                    onClick={onClick}
+                    // onClick={onClick}
+                    onClick={() => { }}
                     className="mt-8"
                 >
                     {buttonText}
