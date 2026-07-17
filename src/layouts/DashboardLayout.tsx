@@ -20,7 +20,7 @@ function DashboardLayout() {
                 )}
                 <Header setOpen={setOpen} miniSidebar={miniSidebar} setMiniSidebar={setMiniSidebar} />
 
-                <main className="flex-1 p-6 overflow-y-auto bg-slate-50">
+                <main className="min-h-screen flex-1 p-6 overflow-y-auto bg-slate-50">
                     <Outlet />
                 </main>
             </div>
