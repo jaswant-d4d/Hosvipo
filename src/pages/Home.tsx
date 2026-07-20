@@ -367,7 +367,7 @@ function Home() {
                 We provide the tools and support  you need to deliver exceptional healthcare services.
               </p>
 
-              <div className="mt-12 space-y-6">
+              <div className="mt-10 space-y-5">
                 {whyChooseHospivo?.slice(0, 4)?.map(({ icon, title, description }) => {
                   const Icon = icon
                   return (
