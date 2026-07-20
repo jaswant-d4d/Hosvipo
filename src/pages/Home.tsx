@@ -349,7 +349,7 @@ function Home() {
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
             <div className="w-full lg:w-2/5">
               <img
-                src="/main-entrance.png"
+                src="/hospital-main-entrance2.png"
                 alt="Hospital"
                 className="w-full rounded-3xl object-cover shadow-xl"
               />
