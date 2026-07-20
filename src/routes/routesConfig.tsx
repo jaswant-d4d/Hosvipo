@@ -1,5 +1,4 @@
 
-import NotFound from "../pages/NotFound";
 import { AboutUs, ActivitiesPage, AppointmentsPage, ChangePasswordPage, ContactsPage, ContactUs, DashboardPage, DoctorsPage, ForgotPassword, Home, HospitalsPage, NotificationsPage, PatientsPage, ProfilePage, ResetPassword, SettingsPage, Signin, Signup } from "./lazyPages";
 
 export const publicRoutes = [
