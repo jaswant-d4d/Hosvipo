@@ -1,5 +1,6 @@
 
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
+import { Button } from "./ui";
 
 const ErrorBoundary = () => {
 
@@ -19,16 +20,17 @@ const ErrorBoundary = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white text-center px-4">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-slate-900 text-white text-center px-4">
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
             <p className="text-gray-400 mb-6">{message}</p>
 
-            <button
+            <Button
                 onClick={() => window.location.href = "/"}
-                className="bg-red-600 px-6 py-2 rounded-lg cursor-pointer hover:bg-red-700"
+                className=""
+                variant="primary"
             >
-                Go to Dashboard
-            </button>
+                Go to Home
+            </Button>
         </div>
     );
 };

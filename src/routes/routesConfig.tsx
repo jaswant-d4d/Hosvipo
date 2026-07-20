@@ -85,8 +85,4 @@ export const protectedRoutes = [
         path: "admin/profile/change-password",
         element: <ChangePasswordPage />,
     },
-    {
-        path: "*",
-        element: <NotFound />,
-    },
 ]

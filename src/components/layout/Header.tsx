@@ -1,95 +1,151 @@
-import { Menu, PanelLeftOpen, PanelRightOpen } from "lucide-react"
-import type { Dispatch, SetStateAction } from "react";
+import { NavLink, useNavigate } from "react-router-dom"
+import { Button } from "../ui"
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
-interface Props {
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  miniSidebar: boolean
-  setMiniSidebar: Dispatch<SetStateAction<boolean>>
-}
+const navLinks = [
+  { link: "/", title: "Home" },
+  { link: "/features", title: "Features" },
+  { link: "/solutions", title: "Solutions" },
+  { link: "/pricing", title: "Pricing" },
+  { link: "/about-us", title: "About Us" },
+  { link: "/contact", title: "Contact" },
+]
+function Header() {
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
-function Header({ setOpen, miniSidebar, setMiniSidebar }: Props) {
-  const getCrudTitle = (
-    pathname: string,
-    resource: string,
-    label: string
-  ) => {
-    if (pathname === `/admin/${resource}`)
-      return label;
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
 
-    if (pathname === `/admin/${resource}/new`)
-      return `Add ${label.slice(0, -1)}`;
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
-    if (
-      new RegExp(`^/admin/${resource}/[^/]+/edit$`).test(pathname)
-    )
-      return `Edit ${label.slice(0, -1)}`;
-
-    if (
-      new RegExp(`^/admin/${resource}/[^/]+$`).test(pathname)
-    )
-      return `View ${label.slice(0, -1)}`;
-
-    return null;
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    setOpen(false);
   };
-
-  const staticTitles: Record<string, string> = {
-    "/admin/dashboard": "Dashboard",
-    "/admin/settings": "Settings",
-    "/admin/activities": "Activity",
-    "/admin/profile": "Profile",
-    "/admin/subscriptions": "Subscriptions",
-    "/admin/payments": "Payments",
-    "/admin/contacts": "Contacts",
-  };
-
-  const getTitle = (pathname: string) => {
-    const crudTitle =
-      getCrudTitle(pathname, "users", "Users") ||
-      getCrudTitle(pathname, "contents", "Contents") ||
-      getCrudTitle(pathname, "genres", "Genres") ||
-      getCrudTitle(pathname, "persons", "Persons");
-
-    return crudTitle || staticTitles[pathname] || "Dashboard";
-  };
-
-  const title = getTitle(window.location.pathname);
-  document.title = title;
 
   return (
-    <header className="sticky inset-0 h-16 z-50 border-b border-slate-200 flex items-center justify-between px-6 lg:px-6 bg-background">
+    <>
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+        <div className="mx-auto flex h-20 max-w-360 items-center justify-between px-4 lg:px-6">
+
+          <NavLink to="/" className="shrink-0">
+            <img
+              src="/logo.png"
+              alt="Hospivo"
+              className="h-16 lg:h-18 w-auto object-contain"
+            />
+          </NavLink>
+
+          <ul className="hidden flex-1 lg:flex items-center justify-center gap-8">
+            {navLinks?.map(({ title, link }) => (
+              <li key={title}>
+                <NavLink to={link}
+                  className={({ isActive }) =>
+                    `font-medium transition-colors ${isActive
+                      ? "text-primary"
+                      : "text-slate-700 hover:text-primary"
+                    }`
+                  }
+                >
+                  {title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          <div className="hidden shrink-0 items-center gap-3 lg:flex">
+            <Button variant="outlinePrimary" onClick={() => navigate("/sign-in")}>Login</Button>
+            <Button variant="primary" onClick={() => { navigate("/contact") }}>Get Started</Button>
+          </div>
+
+          {/* Mobile Header */}
+          <button
+            onClick={() => setOpen(true)}
+            className="rounded-lg p-2 transition hover:bg-slate-100 lg:hidden"
+          >
+            <Menu className="h-6 w-6 text-slate-700" />
+          </button>
+        </div>
+      </header>
+
+      {/* Overlay */}
+      <div
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${open
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
+      />
+
       {/* Mobile Menu */}
-      <div className="flex items-center gap-2">
+      <div
+        className={`fixed inset-y-0 right-0 z-50 flex w-80 max-w-[90vw] flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        {/* Header */}
+        <div className="flex h-20 items-center justify-between border-b border-slate-200 px-6">
+          <img
+            src="/logo.png"
+            alt="Hospivo"
+            className="h-12 w-auto"
+          />
 
-        {/* Mobile Sidebar Toggle */}
-        <button
-          type="button"
-          onClick={() => setOpen((prev) => !prev)}
-          className="flex lg:hidden items-center justify-center h-10 w-10 rounded-xl transition-all duration-200 hover:bg-primary-light hover:text-primary cursor-pointer"
-          aria-label="Toggle Sidebar"
-        >
-          <Menu size={22} />
-        </button>
+          <button
+            onClick={() => setOpen(false)}
+            className="rounded-lg p-2 hover:bg-slate-100"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
 
-        {/* Desktop Mini Sidebar Toggle */}
-        <button
-          type="button"
-          onClick={() => setMiniSidebar((prev: boolean) => !prev)}
-          className="hidden lg:flex items-center justify-center h-10 w-10 rounded-xl transition-all duration-200 hover:bg-primary-light hover:text-primary cursor-pointer"
-          aria-label={miniSidebar ? "Expand Sidebar" : "Collapse Sidebar"}
-        >
-          {miniSidebar ? (
-            <PanelLeftOpen size={20} />
-          ) : (
-            <PanelRightOpen size={20} />
-          )}
-        </button>
-        <h1 className="ml-3 lg:m-0 text-lg font-semibold">
-          {title}
-        </h1>
+        {/* Navigation */}
+        <nav className="flex-1 overflow-y-auto px-6 py-8">
+          <ul className="space-y-2">
+            {navLinks.map(({ title, link }) => (
+              <li key={link}>
+                <NavLink
+                  to={link}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `block rounded-lg px-4 py-3 font-medium transition ${isActive
+                      ? "bg-primary-light text-primary"
+                      : "text-slate-700 hover:bg-slate-100 hover:text-primary"
+                    }`
+                  }
+                >
+                  {title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
+        {/* Footer */}
+        <div className="border-t border-slate-200 p-6 space-y-3">
+          <Button
+            variant="outlinePrimary"
+            className="w-full"
+            onClick={() => handleNavigate("/sign-in")}
+          >
+            Login
+          </Button>
+
+          <Button
+            variant="primary"
+            className="w-full"
+            onClick={() => handleNavigate("/contact")}
+          >
+            Get Started
+          </Button>
+        </div>
       </div>
-    </header>
+    </>
   )
 }
 
-export default Header
+export default Header;

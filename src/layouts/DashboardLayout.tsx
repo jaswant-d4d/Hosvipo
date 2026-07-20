@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/layout/Sidebar";
-import Header from "../components/layout/Header";
+import DashboardHeader from "../components/layout/DashboardHeader";
 import { useState } from "react";
 
 function DashboardLayout() {
@@ -18,7 +18,7 @@ function DashboardLayout() {
                         onClick={() => setOpen(false)}
                     />
                 )}
-                <Header setOpen={setOpen} miniSidebar={miniSidebar} setMiniSidebar={setMiniSidebar} />
+                <DashboardHeader setOpen={setOpen} miniSidebar={miniSidebar} setMiniSidebar={setMiniSidebar} />
 
                 <main className="min-h-screen flex-1 p-6 overflow-y-auto bg-slate-50">
                     <Outlet />

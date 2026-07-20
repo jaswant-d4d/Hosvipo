@@ -9,7 +9,7 @@
 
   /* Primary 2 */
   --color-primary2: #6bcbe9;
-  
+
   /* Secondary */
   --color-secondary: #1e293b;
 
@@ -34,4 +34,17 @@
   /* Sidebar */
   --color-sidebar: #0f172a;
   --color-sidebar-hover: #1e293b;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #cbd5e1;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  width: 28px;
+  border-radius: 9999px;
+  background: #28c1d2 !important;
 }
