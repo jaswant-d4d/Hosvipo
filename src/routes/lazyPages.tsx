@@ -11,6 +11,7 @@ export const AboutUs = lazy(() => import("../pages/AboutUs"))
 export const ContactUs = lazy(() => import("../pages/ContactUs"))
 export const Features = lazy(() => import("../pages/Features"))
 export const Solutions = lazy(() => import("../pages/Solutions"))
+export const Pricing = lazy(() => import("../pages/Pricing"))
 
 
 export const DashboardPage = lazy(() => import("../features/dashboard/pages/DashboardPage"))

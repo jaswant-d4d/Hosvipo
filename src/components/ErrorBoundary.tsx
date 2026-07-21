@@ -28,6 +28,7 @@ const ErrorBoundary = () => {
                 onClick={() => window.location.href = "/"}
                 className=""
                 variant="primary"
+                size="lg"
             >
                 Go to Home
             </Button>

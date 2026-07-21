@@ -1,5 +1,5 @@
 
-import { AboutUs, ActivitiesPage, AppointmentsPage, ChangePasswordPage, ContactsPage, ContactUs, DashboardPage, DoctorsPage, Features, ForgotPassword, Home, HospitalsPage, NotificationsPage, PatientsPage, ProfilePage, ResetPassword, SettingsPage, Signin, Signup, Solutions } from "./lazyPages";
+import { AboutUs, ActivitiesPage, AppointmentsPage, ChangePasswordPage, ContactsPage, ContactUs, DashboardPage, DoctorsPage, Features, ForgotPassword, Home, HospitalsPage, NotificationsPage, PatientsPage, Pricing, ProfilePage, ResetPassword, SettingsPage, Signin, Signup, Solutions } from "./lazyPages";
 
 export const publicRoutes = [
     {
@@ -19,7 +19,11 @@ export const publicRoutes = [
         element: <Solutions />,
     },
     {
-        path: "contact-us",
+        path: "/pricing",
+        element: <Pricing />,
+    },
+    {
+        path: "contact",
         element: <ContactUs />,
     },
     {
