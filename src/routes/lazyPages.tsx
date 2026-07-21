@@ -9,6 +9,8 @@ export const ResetPassword = lazy(() => import("../pages/ResetPassword"))
 export const Home = lazy(() => import("../pages/Home"))
 export const AboutUs = lazy(() => import("../pages/AboutUs"))
 export const ContactUs = lazy(() => import("../pages/ContactUs"))
+export const Features = lazy(() => import("../pages/Features"))
+export const Solutions = lazy(() => import("../pages/Solutions"))
 
 
 export const DashboardPage = lazy(() => import("../features/dashboard/pages/DashboardPage"))

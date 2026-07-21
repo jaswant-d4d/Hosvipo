@@ -184,7 +184,7 @@ function Home() {
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* Left */}
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-light px-4 py-2 text-primary font-medium">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-light px-4 py-2 text-primary sm:font-medium">
                 <Heart className="size-4 fill-primary" />
 
                 Smart Healthcare, Better Management
@@ -268,7 +268,7 @@ function Home() {
 
       {/* Trusted Section */}
       <section className="border-y border-slate-100 bg-slate-50/50">
-        <div className="max-w-360 mx-auto px-6 py-16">
+        <div className="max-w-360 mx-auto px-6 lg:px-8 py-16">
 
           <p className="text-center text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             Trusted By
@@ -305,7 +305,7 @@ function Home() {
 
       {/* Features Section */}
       <section className="border-y border-slate-100 bg-slate-700/10">
-        <div className="max-w-360 mx-auto px-6 py-16">
+        <div className="max-w-360 mx-auto px-6 lg:px-8 py-16">
           <p className="text-center text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             FEATURES
           </p>
@@ -345,7 +345,7 @@ function Home() {
 
       {/* Why Choose Hosvipo Section */}
       <section className="border-y border-slate-100 bg-slate-50/50">
-        <div className="max-w-360 mx-auto px-6 py-16">
+        <div className="max-w-360 mx-auto px-6 lg:px-8 py-16">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
             <div className="w-full lg:w-2/5">
               <img
@@ -394,38 +394,42 @@ function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="mx-auto max-w-360 rounded-3xl bg-primary overflow-hidden my-10">
-        <div className="grid grid-cols-1 divide-y divide-white/15 md:grid-cols-2 md:divide-y-0 md:divide-x xl:grid-cols-4">
-          {stats.map(({ icon, title, description }) => {
-            const Icon = icon;
+      <section className="my-10">
+        <div className="mx-auto max-w-360 px-6 lg:px-8">
+          <div className="overflow-hidden rounded-3xl bg-primary">
+            <div className="grid grid-cols-1 divide-y divide-white/15 md:grid-cols-2 md:divide-y-0 md:divide-x xl:grid-cols-4">
+              {stats.map(({ icon, title, description }) => {
+                const Icon = icon;
 
-            return (
-              <div
-                key={title}
-                className="flex items-center gap-5 px-8 py-8"
-              >
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/10">
-                  <Icon className="h-8 w-8 text-white" />
-                </div>
+                return (
+                  <div
+                    key={title}
+                    className="flex items-center gap-5 px-8 py-8"
+                  >
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/10">
+                      <Icon className="h-8 w-8 text-white" />
+                    </div>
 
-                <div>
-                  <h4 className="text-2xl lg:text-3xl font-semibold text-white">
-                    {title}
-                  </h4>
+                    <div>
+                      <h4 className="text-2xl lg:text-3xl font-semibold text-white">
+                        {title}
+                      </h4>
 
-                  <p className="mt-2 text-base text-white/80">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+                      <p className="mt-2 text-base text-white/80">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Testimonial Section */}
       <section className="border-y border-slate-100 bg-slate-700/10">
-        <div className="max-w-360 mx-auto px-6 py-16">
+        <div className="max-w-360 mx-auto px-6 lg:px-8 py-16">
           <p className="text-center text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             TESTIMONIALS
           </p>
@@ -468,38 +472,36 @@ function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* {testimonials.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.id}
-                testimonial={testimonial}
-              />
-            ))} */}
           </div>
         </div>
       </section>
 
 
       {/* Ready Section */}
-      <section className="mx-auto max-w-360 rounded-3xl bg-primary overflow-hidden mt-10">
-        <div
-          className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 px-6 lg:px-10 py-10"
-        >
-          <div className="max-w-2xl">
-            <h4 className="text-2xl  lg:text-3xl font-semibold text-white">
-              Ready to Transform Your Hospital Management?
-            </h4>
+      <section className="my-10">
+        <div className="mx-auto max-w-360 px-6 lg:px-8">
+          <div className="overflow-hidden rounded-3xl bg-primary">
+            <div
+              className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 px-6 lg:px-10 py-10"
+            >
+              <div className="max-w-2xl">
+                <h4 className="text-2xl  lg:text-3xl font-semibold text-white">
+                  Ready to Transform Your Hospital Management?
+                </h4>
 
-            <p className="mt-2 text-base text-white/80">
-              Join hundreds of hospitals already using Hospivo to deliver better healthcare.
-            </p>
-          </div>
-          <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
-            <Button variant="primary" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
-              Get Started Now
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" rightIcon={<Calendar className="size-6" />} onClick={() => { }}>
-              <span>Book a Demo</span>
-            </Button>
+                <p className="mt-2 text-base text-white/80">
+                  Join hundreds of hospitals already using Hospivo to deliver better healthcare.
+                </p>
+              </div>
+              <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
+                <Button variant="primary" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
+                  Get Started Now
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
+                  <span>Book a Demo</span>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
