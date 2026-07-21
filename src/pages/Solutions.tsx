@@ -298,6 +298,7 @@ function Solutions() {
                                 <Button
                                     rightIcon={<ArrowRight className="size-5" />}
                                     onClick={() => navigate("/contact")}
+                                    size="lg"
                                 >
                                     Explore Solutions
                                 </Button>
@@ -534,10 +535,10 @@ function Solutions() {
                                     </p>
                                 </div>
                                 <div className="mt-6 flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
-                                    <Button variant="primary" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
+                                    <Button variant="primary" size="md" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
                                         Book a Demo
                                     </Button>
-                                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Headset className="size-6" />} onClick={() => { }}>
+                                    <Button variant="outline" size="md" className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Headset className="size-6" />} onClick={() => { }}>
                                         <span>Contact Sales</span>
                                     </Button>
                                 </div>

@@ -59,8 +59,8 @@ function Header() {
           </ul>
 
           <div className="hidden shrink-0 items-center gap-3 lg:flex">
-            <Button variant="outlinePrimary" onClick={() => navigate("/sign-in")}>Login</Button>
-            <Button variant="primary" onClick={() => { navigate("/contact") }}>Get Started</Button>
+            <Button variant="outlinePrimary" size="md" onClick={() => navigate("/sign-in")}>Login</Button>
+            <Button variant="primary" size="md"onClick={() => { navigate("/contact") }}>Get Started</Button>
           </div>
 
           {/* Mobile Header */}

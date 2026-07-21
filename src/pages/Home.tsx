@@ -212,7 +212,8 @@ function Home() {
                 <Button
                   rightIcon={<ArrowRight className="size-5" />}
                   onClick={() => navigate("/contact")}
-                >
+                  size="lg"
+                  >
                   Get Started
                 </Button>
 
@@ -220,6 +221,7 @@ function Home() {
                   variant="outlinePrimary"
                   leftIcon={<Calendar className="size-5" />}
                   onClick={() => navigate("/contact")}
+                  size="lg"
                 >
                   Book a Demo
                 </Button>
@@ -337,7 +339,7 @@ function Home() {
           </div>
 
           <div className="mx-auto text-center">
-            <Button onClick={() => navigate("/features")} className="mt-8 ">Explore All Features</Button>
+            <Button onClick={() => navigate("/features")} className="mt-8 " size="lg">Explore All Features</Button>
           </div>
         </div>
 
@@ -494,10 +496,10 @@ function Home() {
                 </p>
               </div>
               <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
-                <Button variant="primary" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
+                <Button variant="primary" className="bg-white! text-primary! hover:bg-primary2" size="md" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
                   Get Started Now
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" size="md" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
                   <span>Book a Demo</span>
                 </Button>
               </div>

@@ -101,6 +101,7 @@ function Features() {
                                 <Button
                                     rightIcon={<ArrowRight className="size-5" />}
                                     onClick={() => navigate("/contact")}
+                                    size="lg"
                                 >
                                     Get Started Now
                                 </Button>
@@ -180,7 +181,7 @@ function Features() {
                         {features?.map(({ icon, title, description }) => {
                             const Icon = icon
                             return (
-                                <div className="space-y-4 p-6 bg-white rounded-2xl">
+                                <div className="space-y-4 p-6 bg-white rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                                     <div className="flex items-center gap-4">
                                         <div className="size-12 p-3 rounded-full bg-primary-light">
                                             <Icon className="size-6 text-primary" />
@@ -214,10 +215,10 @@ function Features() {
                             className="flex flex-col gap-8 px-6 lg:px-10 py-10"
                         >
                             <div className="max-w-2xl">
-                                <div className="inline-flex rounded-full border border-primary/20 bg-primary-light px-4 py-2 text-primary font-medium mb-2">
+                                <div className="inline-flex rounded-full border border-primary/20 bg-primary-light px-4 py-2 text-primary-dark font-medium">
                                     READY TO GET STARTED?
                                 </div>
-                                <h4 className="text-2xl  lg:text-3xl font-semibold text-white">
+                                <h4 className="mt-4 text-2xl  lg:text-3xl font-semibold text-white">
                                     Experience the Power of Hospivo
                                 </h4>
 
@@ -226,10 +227,10 @@ function Features() {
                                 </p>
                             </div>
                             <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
-                                <Button variant="primary" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
+                                <Button variant="primary"size="md" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
                                     Get Started Now
                                 </Button>
-                                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
+                                <Button variant="outline" size="md"className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
                                     <span>Book a Demo</span>
                                 </Button>
                             </div>
