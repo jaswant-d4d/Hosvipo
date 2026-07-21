@@ -1,4 +1,4 @@
-import { Check, MoveRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "../components/ui";
 
 export interface PricingPlan {
