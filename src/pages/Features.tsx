@@ -177,11 +177,12 @@ function Features() {
                         From patient registration to billing and reporting. Hospivo simplifies every process so you can focus on what matters most.
                     </p>
 
-                    <div className="mt-14 grid md:grid-cols-2 gap-6 xl:grid-cols-3">
+                    <div className="mt-14 justify-center flex flex-wrap gap-6 ">
                         {features?.map(({ icon, title, description }) => {
                             const Icon = icon
                             return (
-                                <div className="space-y-4 p-6 bg-white rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                                <div key={title} className="basis-full sm:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] xl:basis-[calc(25%-18px)] flex-grow-0 space-y-4 p-6 border border-slate-200 bg-white rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary/30">
+                                    
                                     <div className="flex items-center gap-4">
                                         <div className="size-12 p-3 rounded-full bg-primary-light">
                                             <Icon className="size-6 text-primary" />
@@ -227,10 +228,10 @@ function Features() {
                                 </p>
                             </div>
                             <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
-                                <Button variant="primary"size="md" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
+                                <Button variant="primary" size="md" className="bg-white! text-primary! hover:bg-primary2" rightIcon={<ArrowRight className="size-6" />} onClick={() => { }}>
                                     Get Started Now
                                 </Button>
-                                <Button variant="outline" size="md"className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
+                                <Button variant="outline" size="md" className="border-white text-white hover:bg-white hover:text-primary" leftIcon={<Calendar className="size-6" />} onClick={() => { }}>
                                     <span>Book a Demo</span>
                                 </Button>
                             </div>

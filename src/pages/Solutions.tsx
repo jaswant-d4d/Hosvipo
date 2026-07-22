@@ -340,8 +340,9 @@ function Solutions() {
                             const Icon = item.icon;
                             const color = iconColors[index + 1]
                             return (
-                                <div className="group pb-18 relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary/3" key={item.slug}>
+                                <div className="group pb-18 relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary/30" key={item.slug}>
                                     <div className={`absolute left-6 -top-6 rounded-full  ${color.bg} p-4 shadow-lg`}>
+
                                         <Icon className={`size-7  ${color.icon}`} />
                                     </div>
                                     <h4 className="mt-7 text-xl font-bold leading-7 text-slate-900">
@@ -531,7 +532,7 @@ function Solutions() {
                                     </h4>
 
                                     <p className="mt-5 text-lg font-medium text-white/80">
-                                        Join hundreds of healthcare organizations already using Hosvipo to deliver better care.
+                                        Join hundreds of healthcare organizations already using Hospivo to deliver better care.
                                     </p>
                                 </div>
                                 <div className="mt-6 flex w-full flex-col gap-4 sm:flex-row lg:w-auto">

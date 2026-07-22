@@ -5,14 +5,13 @@ interface Props {
     name: string
     icon?: LucideIcon
     label?: string
-    type?: string
     placeholder?: string
     styleClasses?: string
 }
 
-export function Input({ type = "text", name, icon: Icon, label, placeholder, styleClasses }: Props) {
+export function Textarea({ name, icon: Icon, label, placeholder, styleClasses }: Props) {
 
-    const classes = `mt-1 p-3 px-4 ps-12 w-full border border-slate-500 rounded-lg outline-none focus:ring-1 focus:ring-slate-500 ${styleClasses}`;
+    const classes = `h-28 mt-1 p-3 px-4 ps-12 w-full border border-slate-500 rounded-lg outline-none focus:ring-1 focus:ring-slate-500 ${styleClasses}`;
 
     const { control } = useFormContext();
 
@@ -34,11 +33,12 @@ export function Input({ type = "text", name, icon: Icon, label, placeholder, sty
                 {Icon && (
                     <Icon className="text-slate-700 size-5 absolute top-4.5 left-4 " />
                 )}
-                <input  {...field} type={type} id={name} name={name} placeholder={placeholder} className={classes} />
+                <textarea  {...field} id={name} name={name} placeholder={placeholder} className={classes} cols={4}>
+                </textarea>
 
             </div>
             {error && (
-                <p className="text-sm text-red-500 mt-1">{error.message}</p>
+                <p className="text-sm text-red-500">{error.message}</p>
             )}
         </div>
     )

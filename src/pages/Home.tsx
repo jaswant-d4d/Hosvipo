@@ -323,7 +323,7 @@ function Home() {
             {features?.slice(0, 6)?.map(({ icon, title, description }) => {
               const Icon = icon
               return (
-                <div className="p-6 bg-white rounded-2xl">
+                <div className="p-6 bg-white rounded-2xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
                   <div className="size-12 p-3 rounded-full bg-primary-light">
                     <Icon className="size-6 text-primary" />
                   </div>
@@ -339,13 +339,13 @@ function Home() {
           </div>
 
           <div className="mx-auto text-center">
-            <Button onClick={() => navigate("/features")} className="mt-8 " size="lg">Explore All Features</Button>
+            <Button onClick={() => navigate("/features")} className="mt-8 cursor-pointer" size="lg">Explore All Features</Button>
           </div>
         </div>
 
       </section>
 
-      {/* Why Choose Hosvipo Section */}
+      {/* Why Choose Hospivo Section */}
       <section className="border-y border-slate-100 bg-slate-50/50">
         <div className="max-w-360 mx-auto px-6 lg:px-8 py-16">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
@@ -358,12 +358,12 @@ function Home() {
             </div>
             <div className="flex-1 w-full ">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-                WHY CHOOSE HOSVIPO
+                WHY CHOOSE HOSPIVO
               </p>
 
               {/* <div className="h-12 w-1 rounded-full bg-primary" /> */}
               <h3 className="mt-3 text-3xl font-bold text-slate-900">
-                Why Healthcare Providers Choose Hosvipo
+                Why Healthcare Providers Choose Hospivo
               </h3>
               <p className="mt-3 text-lg font-medium text-slate-500">
                 We provide the tools and support  you need to deliver exceptional healthcare services.
